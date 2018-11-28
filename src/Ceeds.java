@@ -47,7 +47,8 @@ public class Ceeds {
     }
 
     // 4
-    boolean isSorted(double[] arr1, double[] arr2){
+    boolean isSorted(double[] arr1){
+        double[] arr2 = Arrays.copyOf(arr1,arr1.length);
         return Arrays.equals(arr1, arr2);
     }
 }
