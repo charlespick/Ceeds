@@ -1,0 +1,93 @@
+Page 371 hw
+
+11.
+Random rng = new Random();
+boolean working = true;
+do {
+    int rn = rng.nextInt();
+    System.out.println(rn);
+    working = rn > 900;
+} while (working);
+
+12. 
+This is a fencepost problem. To solve it, check if you are at text.length and if so, don't print the "-" at the end
+
+13. 
+static void minMax(){
+    Integer min = null;
+    Integer max = null;
+
+    Scanner sc = new Scanner(System.in);
+
+    boolean searchingForFirst = true;
+    do{
+        System.out.println("Enter a number");
+        if(sc.hasNextInt()){
+            min = sc.nextInt();
+            max = min;
+            searchingForFirst = false;
+        }else{
+            System.out.println("That's not a number, silly");
+        }
+    }while (searchingForFirst);
+
+    boolean searchingForMore = true;
+    do{
+        System.out.println("Enter another number or -1 to compute");
+        if(sc.hasNextInt()){
+            int current = sc.nextInt();
+            if(current!=-1){
+                if(current>max){
+                    max = current;
+                }
+                if(current<min){
+                    min = current;
+                }
+            }else{
+                searchingForMore = false;
+            }
+        }else{
+            System.out.println("That's not a number, silly");
+        }
+    }while (searchingForMore);
+
+    System.out.println("Minimum val was " + min);
+    System.out.println("Maximum val was " + max);
+}
+
+14. 
+a) true
+b) true
+c) false
+d) true
+e) false
+f) false
+g) true
+h) false
+i) false
+j) false
+k) true
+l) true
+
+15. 
+static boolean isVowel(String a) {
+    switch (a.toUpperCase()) {
+        case "A":
+            return true;
+        case "E":
+            return true;
+        case "I":
+            return true;
+        case "O":
+            return true;
+        case "U":
+            return true;
+        default:
+            return false;
+    }
+}
+
+16. 
+The logic should be keeping track of how many factors there are total to draw a conclustion a the end not updating "prime" in the middle of execution
+
+17. 
