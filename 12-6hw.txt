@@ -1,0 +1,20 @@
+static boolean contains(int[] searchIn, int[] searchFor) {
+        if (searchFor.length > searchIn.length) {
+            return false;
+        }
+
+        int followIndex = 0;
+
+        for (int i = 0; i < searchIn.length; i++) {
+            if(searchIn[i]==searchFor[followIndex]){
+                followIndex++;
+            }else {
+                followIndex=0;
+            }
+            if(followIndex==searchFor.length){
+                return true;
+            }
+        }
+
+        return false;
+    }

@@ -5,60 +5,32 @@ public class Ceeds {
 
     public static void main(String[] args) {
         minMax();
+
+        int[] arr = new int[]{5, 6, 7, 8, 9};
+        contains(arr, arr);
+
     }
 
-    public boolean isUnique(int[] input){
-        for (int i = 0; i < input.length; i++) {
-            for (int j = i+1; j < input.length; j++) {
-                if(input[i]==input[j]){
-                    return false;
-                }
+    static boolean contains(int[] searchIn, int[] searchFor) {
+        if (searchFor.length > searchIn.length) {
+            return false;
+        }
+
+        int followIndex = 0;
+
+        for (int i = 0; i < searchIn.length; i++) {
+            if(searchIn[i]==searchFor[followIndex]){
+                followIndex++;
+            }else {
+                followIndex=0;
+            }
+            if(followIndex==searchFor.length){
+                return true;
             }
         }
-        return true;
+
+        return false;
     }
-
-    public int priceIsRight(int[] bids,int price){
-        int winner = -1;
-        int distance = price;
-
-        for (int i = 0; i < bids.length; i++) {
-            if((bids[i]<=price)&&(price-bids[i]<distance))
-            {
-                winner = i;
-                distance = price-bids[i];
-            }
-        }
-        return winner;
-    }
-
-    int longestSortedSequence(int[] input){
-        int length = 0;
-        int beginning = 0;
-        int end = 0;
-
-        for (int i = 1; i < input.length; i++) {
-            if(input[i]>=input[i-1]){
-                end = i;
-
-
-            }
-        }
-        return length;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-    //Page 511 hw
 
     static void minMax() {
         Integer min = null;
@@ -120,6 +92,48 @@ public class Ceeds {
         }
     }
 
+    public boolean isUnique(int[] input) {
+        for (int i = 0; i < input.length; i++) {
+            for (int j = i + 1; j < input.length; j++) {
+                if (input[i] == input[j]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+    //Page 511 hw
+
+    public int priceIsRight(int[] bids, int price) {
+        int winner = -1;
+        int distance = price;
+
+        for (int i = 0; i < bids.length; i++) {
+            if ((bids[i] <= price) && (price - bids[i] < distance)) {
+                winner = i;
+                distance = price - bids[i];
+            }
+        }
+        return winner;
+    }
+
+    int longestSortedSequence(int[] input) {
+        int length = 0;
+        int beginning = 0;
+        int end = 0;
+
+        for (int i = 1; i < input.length; i++) {
+            if (input[i] >= input[i - 1]) {
+                end = i;
+
+
+            }
+        }
+        return length;
+    }
+
     // 1
     int lastIndexOf(int[] searchDomain, int whereIs) {
         int foundAt = -1;
@@ -162,6 +176,5 @@ public class Ceeds {
         double[] arr2 = Arrays.copyOf(arr1, arr1.length);
         return Arrays.equals(arr1, arr2);
     }
-
 
 }
