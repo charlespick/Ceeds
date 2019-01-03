@@ -1,0 +1,28 @@
+22. They allow you to think more about what the computer is doing in common situations without thinking about the underling instructions once they are written
+23. Items that are connected to processes that are running but don't activly check that value and thus need to be updated with new information should be private 
+so you can add inteligence to the act of updating a value through a setter meathod
+24. public getters
+26. public class Name {
+    private String firstName;
+    private String lastName;
+    private char middleInitial;
+    public Name(String firstName, String lastName, char middleInitial) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleInitial = middleInitial;
+    }
+    public Name(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    public String getFirstName(){
+        return firstName;
+    }
+    public String getLastName(){
+        return lastName;
+    }
+    public char getMiddleInitial(){
+        return middleInitial;
+    }
+}
+28. it allows you to quit checking the state of a value or implement pure "interupt based coding"
